@@ -8,6 +8,8 @@ import (
 
 type PingRouter struct {
 	znet.BaseRouter
+	i int
+	b int
 }
 
 func (b *PingRouter) PreHandle(request ziface.IRequest) {
