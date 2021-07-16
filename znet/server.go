@@ -28,7 +28,7 @@ func CallBackToClient(conn *net.TCPConn, data []byte, cnt int) error {
 }
 
 func (s *Server) Start() {
-	fmt.Printf("[zinx]Server config: ip:%s", s.IP, "port:", s.Port, "name", s.Name)
+	fmt.Println("[zinx]Server config: ip:", s.IP, "port:", s.Port, "name", s.Name)
 	//创建连接
 	fmt.Printf("[Start] Server Listening at IP:%s,port:%d,is starting", s.IP, s.Port)
 	go func() {
@@ -44,7 +44,7 @@ func (s *Server) Start() {
 		}
 		defer Listener.Close()
 		var cid uint32
-		fmt.Printf("start zinx serverr succ", s.Name, "sucess,listening")
+		fmt.Println("start zinx serverr succ", s.Name, "sucess,listening")
 		for {
 			conn, err := Listener.AcceptTCP()
 			if err != nil {
