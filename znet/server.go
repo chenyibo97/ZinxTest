@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net"
+	"studygo2/zinxtest/utils"
 	"studygo2/zinxtest/ziface"
 )
 
@@ -27,6 +28,7 @@ func CallBackToClient(conn *net.TCPConn, data []byte, cnt int) error {
 }
 
 func (s *Server) Start() {
+	fmt.Printf("[zinx]Server config: ip:%s", s.IP, "port:", s.Port, "name", s.Name)
 	//创建连接
 	fmt.Printf("[Start] Server Listening at IP:%s,port:%d,is starting", s.IP, s.Port)
 	go func() {
@@ -73,9 +75,9 @@ func (s *Server) AddRouter(router ziface.IRouter) {
 func NewServer(name string) ziface.IServer {
 	return &Server{
 		IPVersion: "tcp4",
-		IP:        "127.0.0.1",
-		Name:      name,
-		Port:      8999,
+		IP:        utils.GlobalObject.Host,
+		Name:      utils.GlobalObject.Name,
+		Port:      utils.GlobalObject.TcpPort,
 		router:    nil,
 	}
 }
