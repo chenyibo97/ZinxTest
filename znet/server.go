@@ -16,6 +16,11 @@ type Server struct {
 	Port      int
 	//router    ziface.IRouter
 	MsgHandle ziface.IMsgHandle
+	ConnMgr   ziface.IConnManager
+	//server创建连接后自动调用的HOOK函数
+	OnConnStart func(conn ziface.IConnection)
+	//server销毁连接后自动调用的HOOK函数
+	OnConnStop func(conn ziface.IConnection)
 }
 
 func CallBackToClient(conn *net.TCPConn, data []byte, cnt int) error {
@@ -55,7 +60,15 @@ func (s *Server) Start() {
 				continue
 			}
 
-			connection := NewConnection(conn, cid, s.MsgHandle)
+			if s.ConnMgr.Len() >= utils.GlobalObject.MaxConn {
+				//TODO 给客户端响应一个超出最大连接的错误包
+				fmt.Println("too many connection ,maxconn=", utils.GlobalObject.MaxConn)
+				conn.Close()
+				continue
+			}
+			connection := NewConnection(conn, cid, s.MsgHandle, s)
+			connection.TcpServer.GetConnmgr().Add(connection)
+			fmt.Println("添加成功，当前连接数为:", s.ConnMgr.Len(), "最大连接数为:", utils.GlobalObject.MaxConn)
 			cid++
 			connection.Start()
 		}
@@ -64,6 +77,8 @@ func (s *Server) Start() {
 }
 func (s *Server) Stop() {
 	//todo 将一些服务器的资源回收和停止
+	fmt.Println("server stop")
+	s.ConnMgr.ClearConn()
 }
 
 func (s *Server) Server() {
@@ -82,5 +97,31 @@ func NewServer(name string) ziface.IServer {
 		Name:      utils.GlobalObject.Name,
 		Port:      utils.GlobalObject.TcpPort,
 		MsgHandle: NewMsgHandle(),
+		ConnMgr:   NewConnManager(),
+	}
+}
+func (s *Server) GetConnmgr() ziface.IConnManager {
+	return s.ConnMgr
+}
+
+func (s *Server) SetOnConnStart(f func(connection ziface.IConnection)) {
+	s.OnConnStart = f
+}
+
+func (s *Server) SetOnConnStop(f func(connection ziface.IConnection)) {
+	s.OnConnStop = f
+}
+
+func (s *Server) CallOnConnStart(connection ziface.IConnection) {
+	if s.OnConnStart != nil {
+		fmt.Println("CallOnConnStart")
+		s.OnConnStart(connection)
+	}
+}
+
+func (s *Server) CallOnConnStop(connection ziface.IConnection) {
+	if s.OnConnStop != nil {
+		fmt.Println("CallOnConnStop")
+		s.OnConnStop(connection)
 	}
 }

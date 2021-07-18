@@ -19,9 +19,11 @@ type Connection struct {
 	MsgChan chan []byte
 	//Router ziface.IRouter
 	MsgHandle ziface.IMsgHandle
+	//当前CONN隶属于哪个指针
+	TcpServer ziface.IServer
 }
 
-func NewConnection(conn *net.TCPConn, ConnId uint32, MsgHandle ziface.IMsgHandle) *Connection {
+func NewConnection(conn *net.TCPConn, ConnId uint32, MsgHandle ziface.IMsgHandle, TcpServer ziface.IServer) *Connection {
 	return &Connection{
 		conn,
 		ConnId,
@@ -30,7 +32,9 @@ func NewConnection(conn *net.TCPConn, ConnId uint32, MsgHandle ziface.IMsgHandle
 		make(chan bool, 1),
 		make(chan []byte),
 		MsgHandle,
+		TcpServer,
 	}
+
 }
 func (c *Connection) StartWriter() {
 	fmt.Println("[Write goutine is runing]")
@@ -120,8 +124,10 @@ func (c *Connection) Start() {
 	//TODO 启动从当前连接写数据的业务
 	go c.StartReader()
 	go c.StartWriter()
+	c.TcpServer.CallOnConnStart(c)
 }
 func (c *Connection) Stop() {
+
 	fmt.Println("connection stop,connID=", c.ConnId)
 	if c.IsClosed == true {
 		return
@@ -131,6 +137,8 @@ func (c *Connection) Stop() {
 	c.Exit <- true
 	close(c.Exit)
 	close(c.MsgChan)
+	c.TcpServer.CallOnConnStop(c)
+	c.TcpServer.GetConnmgr().Remove(c)
 	return
 }
 func (c *Connection) GetTcpConnection() *net.TCPConn {

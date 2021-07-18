@@ -42,7 +42,7 @@ func main() {
 			buf2:=make([]byte,message.GetMsgLen())
 			io.ReadFull(conn, buf2)
 			fmt.Println(string(buf2))*/
-		time.Sleep(1 * time.Second)
+		time.Sleep(5 * time.Second)
 
 		headData := make([]byte, dp.GetHeadLen())
 		_, err := io.ReadFull(conn, headData)
