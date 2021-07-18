@@ -7,6 +7,7 @@ import (
 	"net"
 	"studygo2/zinxtest/utils"
 	"studygo2/zinxtest/ziface"
+	"sync"
 )
 
 type Connection struct {
@@ -21,18 +22,24 @@ type Connection struct {
 	MsgHandle ziface.IMsgHandle
 	//当前CONN隶属于哪个指针
 	TcpServer ziface.IServer
+
+	//链接属性集合
+	property map[string]interface{}
+	//保护链接属性的锁
+	propertyLock sync.RWMutex
 }
 
 func NewConnection(conn *net.TCPConn, ConnId uint32, MsgHandle ziface.IMsgHandle, TcpServer ziface.IServer) *Connection {
 	return &Connection{
-		conn,
-		ConnId,
-		false,
+		Conn:     conn,
+		ConnId:   ConnId,
+		IsClosed: false,
 		//callback_Api,
-		make(chan bool, 1),
-		make(chan []byte),
-		MsgHandle,
-		TcpServer,
+		Exit:      make(chan bool, 1),
+		MsgChan:   make(chan []byte),
+		MsgHandle: MsgHandle,
+		TcpServer: TcpServer,
+		property:  make(map[string]interface{}),
 	}
 
 }
@@ -165,4 +172,25 @@ func (c *Connection) SendMsg(msgid uint32, data []byte) (err error) {
 
 	c.MsgChan <- binaryMsg
 	return
+}
+
+func (c *Connection) SetProperty(key string, value interface{}) {
+	c.propertyLock.Lock()
+	defer c.propertyLock.Unlock()
+	c.property[key] = value
+}
+
+func (c *Connection) GetProperty(key string) (value interface{}, err error) {
+	c.propertyLock.RLock()
+	c.propertyLock.RUnlock()
+	if proper, ok := c.property[key]; ok {
+		return proper, nil
+	}
+	return nil, errors.New("propertt no found")
+}
+
+func (c *Connection) RemoveProperty(key string) {
+	c.propertyLock.Lock()
+	defer c.propertyLock.Unlock()
+	delete(c.property, key)
 }
