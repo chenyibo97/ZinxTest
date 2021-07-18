@@ -30,6 +30,8 @@ func CallBackToClient(conn *net.TCPConn, data []byte, cnt int) error {
 
 func (s *Server) Start() {
 	fmt.Println("[zinx]Server config: ip:", s.IP, "port:", s.Port, "name", s.Name)
+	//开启工作池
+	s.MsgHandle.StartWorkPool()
 	//创建连接
 	fmt.Printf("[Start] Server Listening at IP:%s,port:%d,is starting", s.IP, s.Port)
 	go func() {
