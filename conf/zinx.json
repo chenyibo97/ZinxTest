@@ -1,5 +1,7 @@
 {
   "name": "zubx v0.4 demo server",
   "host": "127.0.0.1",
-  "tcp_port": 8999
+  "tcp_port": 8999,
+  "worker_pool_size":16,
+  "max_worker_task_len": 1024
 }

@@ -1,0 +1,7 @@
+{
+  "name": "MMO GAME ZINX server",
+  "host": "0.0.0.0",
+  "tcp_port": 8999,
+  "worker_pool_size":16,
+  "max_worker_task_len": 3000
+}

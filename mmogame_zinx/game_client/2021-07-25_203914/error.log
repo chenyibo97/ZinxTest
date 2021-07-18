@@ -1,0 +1,1287 @@
+Unity Player [version: Unity 5.4.1f1_649f48bbbf0f]
+
+KERNELBASE.dll caused a Breakpoint (0x80000003)
+  in module KERNELBASE.dll at 0023:763e01c2.
+
+Error occurred at 2021-07-25_204146.
+D:\GO\src\studygo2\zinxtest\mmogame_zinx\game_client\client.exe, run by yibo.
+49% memory in use.
+0 MB physical memory [0 MB free].
+0 MB paging file [0 MB free].
+0 MB user address space [3447 MB free].
+
+Context:
+EDI:    0x04152000  ESI: 0x101f7f6c  EAX:   0x00000001
+EBX:    0x00000000  ECX: 0x01da0000  EDX:   0x01da0000
+EIP:    0x763e01c2  EBP: 0x01fdf40c  SegCs: 0x00000023
+EFlags: 0x00000246  ESP: 0x01fdf118  SegSs: 0x0000002b
+
+Bytes at CS:EIP:
+cc c3 8b ff 55 8b ec 68 ff ff 00 80 6a 03 ff 75 
+
+Stack:
+0x01fdf118: 1010c3ac 101be59c 04152000 00000001 ......... ......
+0x01fdf128: 00000000 00000000 0000396c 00000067 ........l9..g...
+0x01fdf138: 00000000 00010003 00000000 00000000 ................
+0x01fdf148: 00000000 00000000 00000000 00000000 ................
+0x01fdf158: 00000000 00000000 00000000 00000000 ................
+0x01fdf168: 00000000 00000000 00000000 00000000 ................
+0x01fdf178: 00000000 00000000 00000000 00000000 ................
+0x01fdf188: 00000000 00000000 00000000 00000000 ................
+0x01fdf198: 00000000 00000000 00000000 00000000 ................
+0x01fdf1a8: 00000000 00000000 00000000 00000000 ................
+0x01fdf1b8: 00000000 00000000 00000000 00000000 ................
+0x01fdf1c8: 00000000 00000000 00000000 00000000 ................
+0x01fdf1d8: 00000000 00000000 00000000 00000000 ................
+0x01fdf1e8: 00000000 00000000 00000000 00000000 ................
+0x01fdf1f8: 00000000 00000000 00000000 00000000 ................
+0x01fdf208: 00000000 00000000 00000000 00000000 ................
+0x01fdf218: 00000000 00000000 00000000 00000000 ................
+0x01fdf228: 00000000 00000000 00000000 00000000 ................
+0x01fdf238: 00000000 00000000 00000000 00000000 ................
+0x01fdf248: 00000000 00000000 00000000 00000000 ................
+0x01fdf258: 00000000 00000000 00000000 00000000 ................
+0x01fdf268: 00000000 00000000 00000000 00000000 ................
+0x01fdf278: 00000000 00000000 00000000 00000000 ................
+0x01fdf288: 00000000 00000000 00000000 00000000 ................
+0x01fdf298: 00000000 00000000 00000000 00000000 ................
+0x01fdf2a8: 00000000 00000000 00000000 00000000 ................
+0x01fdf2b8: 00000000 00000000 00000000 00000000 ................
+0x01fdf2c8: 00000000 00000000 00000000 00000000 ................
+0x01fdf2d8: 00000000 00000000 00000000 00000000 ................
+0x01fdf2e8: 00000000 00000000 00000000 00000000 ................
+0x01fdf2f8: 00000000 00000000 00000000 00000000 ................
+0x01fdf308: 00000000 00000000 00000000 00000000 ................
+0x01fdf318: 00000000 00000000 00000000 00000000 ................
+0x01fdf328: 00000000 00000000 00000000 00000000 ................
+0x01fdf338: 00000000 00000000 00000000 00000000 ................
+0x01fdf348: 00000000 00000000 00000000 00000000 ................
+0x01fdf358: 00000000 00000000 00000000 00000000 ................
+0x01fdf368: 00000000 00000000 00000000 00000000 ................
+0x01fdf378: 00000000 00000000 00000000 00000000 ................
+0x01fdf388: 00000000 00000000 00000000 00000000 ................
+0x01fdf398: 00000000 00000000 00000000 00000000 ................
+0x01fdf3a8: 00000000 00000000 00000000 00000000 ................
+0x01fdf3b8: 01fdf3d0 1010d1bf 01fdf478 01fdf474 ........x...t...
+0x01fdf3c8: 01fdf468 001c3b34 01fdf3ec 1010d256 h...4;......V...
+0x01fdf3d8: 01fdf478 04152000 00000001 00000000 x.... ..........
+0x01fdf3e8: 15a1da20 01fdf400 1010db93 01fdf3fc  ...............
+0x01fdf3f8: 01fdf478 0000002a 01fdf40c 1010dc43 x...*.......C...
+0x01fdf408: 6bdcec2b 01fdf428 1010d717 00000001 +..k(...........
+0x01fdf418: 01fdf478 00000002 00000000 100142de x............B..
+0x01fdf428: 01fdf460 1010d751 01fdf478 6bdcec47 `...Q...x...G..k
+0x01fdf438: 00000002 00000000 100142de 00000000 .........B......
+0x01fdf448: 01fdf434 01fdeb4c 01fdf938 10118600 4...L...8.......
+0x01fdf458: 7a3f80f7 00000000 01fdf484 1010acc5 ..?z............
+0x01fdf468: 01fdf478 766923a0 00000000 00000001 x....#iv........
+0x01fdf478: 00000000 01fdf4a0 6bdceca3 01fdf4a0 ...........k....
+0x01fdf488: 1010b510 100142de 00000000 00000000 .....B..........
+0x01fdf498: 04180040 000d7c00 01fdf4b4 1010b64c @....|......L...
+0x01fdf4a8: 100142de 00000010 04180040 01fdf4d0 .B......@.......
+0x01fdf4b8: 1010b7b8 00000001 00000000 101f3680 .............6..
+0x01fdf4c8: 00000010 00000000 01fdf4f0 1010a7c1 ................
+0x01fdf4d8: 00000000 00000004 1021e600 00000000 ..........!.....
+0x01fdf4e8: 04180040 04180040 01fdf510 1010edca @...@...........
+0x01fdf4f8: 0000003c 00000004 19af326c 19af326c <.......l2..l2..
+0x01fdf508: 02028658 00000010 01fdf528 1005ee95 X.......(.......
+0x01fdf518: 0000003c 19af326c 19af326c 04184e70 <...l2..l2..pN..
+0x01fdf528: 01fdf538 1005fe74 19af326c 19aec5d0 8...t...l2......
+0x01fdf538: 01fdf544 10060df4 19af326c 01fdf56c D.......l2..l...
+0x01fdf548: 10061da5 04184e70 0585f4c8 19aec528 ....pN......(...
+0x01fdf558: 19aec528 00000000 02028658 04184e70 (.......X...pN..
+0x01fdf568: 01fdf5a0 01fdf5a8 1004448d 19aec528 .........D..(...
+0x01fdf578: 01fdf600 19aec508 01fdf5a0 01fdf5a4 ................
+0x01fdf588: 19aebd90 0418de10 02028658 11993000 ........X....0..
+0x01fdf598: 04180038 042204b0 0000396c 00000000 8.....".l9......
+0x01fdf5a8: 01fdf5e8 05bf0c53 19aec508 01fdf600 ....S...........
+0x01fdf5b8: 19af310c 04223230 01fdf5e8 11896bc8 .1..02"......k..
+0x01fdf5c8: 19b28c50 04223230 05bf0c39 11993000 P...02".9....0..
+0x01fdf5d8: 0418de10 04223230 01fdf5e8 05bf0c2c ....02".....,...
+0x01fdf5e8: 01fdf618 05bf0c1c 02028658 01fdf600 ........X.......
+0x01fdf5f8: 0418de10 042204b0 01fdf624 01fdf628 ......".$...(...
+0x01fdf608: 00000000 00000000 01fdf618 05bb03b4 ................
+0x01fdf618: 01fdf668 05bf2f18 02028658 00000000 h..../..X.......
+0x01fdf628: 04223230 00000004 01fdf638 05bb05a4 02".....8.......
+0x01fdf638: 01fdf668 042204b0 042204b0 02028658 h....."...".X...
+0x01fdf648: 042204b0 041bbec0 1021e600 02028690 ..".......!.....
+0x01fdf658: 04180038 041bbec0 00002000 00000000 8........ ......
+0x01fdf668: 01fdf6c8 05bf2c5f 0418de10 11993000 ...._,.......0..
+0x01fdf678: 00000000 00002000 00000000 02028690 ..... ..........
+0x01fdf688: 00000000 1005de38 00000034 19a42534 ....8...4...4%..
+0x01fdf698: 01fdf6d8 05bb03d8 19a42534 05bc48b4 ........4%...H..
+0x01fdf6a8: 00000000 05bc47ec 01fdf6d8 11896bc8 .....G.......k..
+0x01fdf6b8: 19b28c50 041bbec0 041bb900 00000000 P...............
+0x01fdf6c8: 01fdf718 05bf86d1 11983cf0 11993000 .........<...0..
+0x01fdf6d8: 00000000 00002000 02028690 00000000 ..... ..........
+0x01fdf6e8: 00002000 01fdf768 05bf21bd 00000000 . ..h....!......
+0x01fdf6f8: 02028700 11993000 11983cf0 11983cf0 .....0...<...<..
+0x01fdf708: 01fdf70c 01fdf768 041bbec0 042232a0 ....h........2".
+0x01fdf718: 01fdf768 05bf21bd 041bb900 042232a0 h....!.......2".
+0x01fdf728: 00000001 05740780 05740fb8 05bbe571 ......t...t.q...
+0x01fdf738: 05740fb8 00000000 11896bc9 19b28c50 ..t......k..P...
+0x01fdf748: 041bbec0 00000000 05bbe530 01fdf8c8 ........0.......
+0x01fdf758: 01fdf720 19b4eef0 01fdf8c8 05bbe530  ...........0...
+0x01fdf768: 01fdf788 05bf8607 042232a0 05bbe530 .........2".0...
+0x01fdf778: 01fdf77c 01fdf7d4 19b4eef0 01fdf8c8 |...............
+0x01fdf788: 01fdf7d4 05bbe571 042204f8 00000036 ....q.....".6...
+0x01fdf798: 11919158 01fdf7b8 243cb196 01fdf7bc X.........<$....
+0x01fdf7a8: 10001e3d 19aec508 19aec508 19aec508 =...............
+0x01fdf7b8: 00000000 00000000 10001de5 19aec508 ................
+0x01fdf7c8: 19b4eef0 058506b8 01fdf7d8 01fdf804 ................
+0x01fdf7d8: 100f1440 020286c8 01fdf840 01fdf8c8 @.......@.......
+0x01fdf7e8: 05bf0928 00010000 19aec508 19aec508 (...............
+0x01fdf7f8: 043007d0 04184e70 00000103 01fdf828 ..0.pN......(...
+0x01fdf808: 1005d7ee 19aec508 020286c8 01fdf840 ............@...
+0x01fdf818: 01fdf8c8 10134351 11ab753a 19aec508 ....QC..:u......
+0x01fdf828: 01fdf870 10062648 19aec508 020286c8 p...H&..........
+0x01fdf838: 01fdf840 01fdf8c8 19aec508 100622f9 @............"..
+0x01fdf848: 19aec508 1189b3c8 04221040 0590bc5c ........@.".\...
+0x01fdf858: 00000000 00000000 1189b3c8 1005ef83 ................
+0x01fdf868: 01fdf840 6bdce057 01fdf8a0 100628df @...W..k.....(..
+0x01fdf878: 19aec508 020286c8 02029d98 01fdf8c8 ................
+0x01fdf888: 76684d30 00000000 020277a8 04184e70 0Mhv.....w..pN..
+0x01fdf898: 01fdf8a0 00000000 01fdf8cc 1007b784 ................
+0x01fdf8a8: 020286c8 04221040 01fdf8c8 01fdf8c4 ....@.".........
+0x01fdf8b8: 04184e70 04221000 1000ed0a 02029d68 pN....".....h...
+0x01fdf8c8: 00000000 01fdf8f0 1007c3dc 04221000 ..............".
+0x01fdf8d8: 0418f320 00000000 0419afd8 060cc0b6  ...............
+0x01fdf8e8: 1013596c 0418f320 01fdf910 1007ef83 lY.. ...........
+0x01fdf8f8: 000003e8 1010c4c9 0419afd8 00000000 ................
+0x01fdf908: 1197ed20 1007c2cb 01fdf948 1010c4f4  .......H.......
+0x01fdf918: 0000396c 6bdce16f 1010c4c9 1010c4c9 l9..o..k........
+0x01fdf928: 0419afd8 00000000 01fdf91c 01fdeb4c ............L...
+0x01fdf938: 01fdf9a4 10118600 7a3f8097 00000000 ..........?z....
+0x01fdf948: 01fdf958 7668fa29 0419afd8 7668fa10 X...).hv......hv
+0x01fdf958: 01fdf9b4 77d17a7e 0419afd8 243cbfee ....~z.w......<$
+0x01fdf968: 00000000 00000000 0419afd8 80000003 ................
+0x01fdf978: 00000000 7643e880 b6607795 03bcadb3 ......Cv.w`.....
+0x01fdf988: 00000000 00000000 01fdeb2c c0239f15 ........,.....#.
+0x01fdf998: 00000000 01fdf964 01fdeb2c 01fdf9bc ....d...,.......
+0x01fdf9a8: 77d2ad20 521a8e1a 00000000 01fdf9c4  ..w...R........
+0x01fdf9b8: 77d17a4e ffffffff 77d38a40 00000000 Nz.w....@..w....
+0x01fdf9c8: 00000000 1010c4c9 0419afd8 00000000 ................
+0x01fdf9d8: 00000000 00000000 00000000 00000000 ................
+0x01fdf9e8: 00000000 00000000 00000000 00000000 ................
+0x01fdf9f8: 00000000 00000000 00000000 00000000 ................
+0x01fdfa08: 00000000 00000000 00000000 00000000 ................
+0x01fdfa18: 00000000 00000000 00000000 00000000 ................
+0x01fdfa28: 00000000 00000000 00000000 00000000 ................
+0x01fdfa38: 00000000 00000000 00000000 00000000 ................
+0x01fdfa48: 00000000 00000000 00000000 00000000 ................
+0x01fdfa58: 00000000 00000000 00000000 00000000 ................
+0x01fdfa68: 00000000 00000000 00000000 00000000 ................
+0x01fdfa78: 00000000 00000000 00000000 00000000 ................
+0x01fdfa88: 00000000 00000000 00000000 00000000 ................
+0x01fdfa98: 00000000 00000000 00000000 00000000 ................
+0x01fdfaa8: 00000000 00000000 00000000 00000000 ................
+0x01fdfab8: 00000000 00000000 00000000 00000000 ................
+0x01fdfac8: 00000000 00000000 00000000 00000000 ................
+0x01fdfad8: 00000000 00000000 00000000 00000000 ................
+0x01fdfae8: 00000000 00000000 00000000 00000000 ................
+0x01fdfaf8: 00000000 00000000 00000000 00000000 ................
+0x01fdfb08: 00000000 00000000 00000000 00000000 ................
+0x01fdfb18: 00000000 00000000 00000000 00000000 ................
+0x01fdfb28: 00000000 00000000 00000000 00000000 ................
+0x01fdfb38: 00000000 00000000 00000000 00000000 ................
+0x01fdfb48: 00000000 00000000 00000000 00000000 ................
+0x01fdfb58: 00000000 00000000 00000000 00000000 ................
+0x01fdfb68: 00000000 00000000 00000000 00000000 ................
+0x01fdfb78: 00000000 00000000 00000000 00000000 ................
+0x01fdfb88: 00000000 00000000 00000000 00000000 ................
+0x01fdfb98: 00000000 00000000 00000000 00000000 ................
+0x01fdfba8: 00000000 00000000 00000000 00000000 ................
+0x01fdfbb8: 00000000 00000000 00000000 00000000 ................
+0x01fdfbc8: 00000000 00000000 00000000 00000000 ................
+0x01fdfbd8: 00000000 00000000 00000000 00000000 ................
+0x01fdfbe8: 00000000 00000000 00000000 00000000 ................
+0x01fdfbf8: 00000000 00000000 00000000 00000000 ................
+0x01fdfc08: 00000000 00000000 00000000 00000000 ................
+0x01fdfc18: 00000000 00000000 00000000 00000000 ................
+0x01fdfc28: 00000000 00000000 00000000 00000000 ................
+0x01fdfc38: 00000000 00000000 00000000 00000000 ................
+0x01fdfc48: 00000000 00000000 00000000 00000000 ................
+0x01fdfc58: 00000000 00000000 00000000 00000000 ................
+0x01fdfc68: 00000000 00000000 00000000 00000000 ................
+0x01fdfc78: 00000000 00000000 00000000 00000000 ................
+0x01fdfc88: 00000000 00000000 00000000 00000000 ................
+0x01fdfc98: 00000000 00000000 00000000 00000000 ................
+0x01fdfca8: 00000000 00000000 00000000 00000000 ................
+0x01fdfcb8: 00000000 00000000 00000000 00000000 ................
+0x01fdfcc8: 00000000 00000000 00000000 00000000 ................
+0x01fdfcd8: 00000000 00000000 00000000 00000000 ................
+0x01fdfce8: 00000000 00000000 00000000 00000000 ................
+0x01fdfcf8: 00000000 00000000 00000000 00000000 ................
+0x01fdfd08: 00000000 00000000 00000000 00000000 ................
+0x01fdfd18: 00000000 00000000 00000000 00000000 ................
+0x01fdfd28: 00000000 00000000 00000000 00000000 ................
+0x01fdfd38: 00000000 00000000 00000000 00000000 ................
+0x01fdfd48: 00000000 00000000 00000000 00000000 ................
+0x01fdfd58: 00000000 00000000 00000000 00000000 ................
+0x01fdfd68: 00000000 00000000 00000000 00000000 ................
+0x01fdfd78: 00000000 00000000 00000000 00000000 ................
+0x01fdfd88: 00000000 00000000 00000000 00000000 ................
+0x01fdfd98: 00000000 00000000 00000000 00000000 ................
+0x01fdfda8: 00000000 00000000 00000000 00000000 ................
+0x01fdfdb8: 00000000 00000000 00000000 00000000 ................
+0x01fdfdc8: 00000000 00000000 00000000 00000000 ................
+0x01fdfdd8: 00000000 00000000 00000000 00000000 ................
+0x01fdfde8: 00000000 00000000 00000000 00000000 ................
+0x01fdfdf8: 00000000 00000000 00000000 00000000 ................
+0x01fdfe08: 00000000 00000000 00000000 00000000 ................
+0x01fdfe18: 00000000 00000000 00000000 00000000 ................
+0x01fdfe28: 00000000 00000000 00000000 00000000 ................
+0x01fdfe38: 00000000 00000000 00000000 00000000 ................
+0x01fdfe48: 00000000 00000000 00000000 00000000 ................
+0x01fdfe58: 00000000 00000000 00000000 00000000 ................
+0x01fdfe68: 00000000 00000000 00000000 00000000 ................
+0x01fdfe78: 00000000 00000000 00000000 00000000 ................
+0x01fdfe88: 00000000 00000000 00000000 00000000 ................
+0x01fdfe98: 00000000 00000000 00000000 00000000 ................
+0x01fdfea8: 00000000 00000000 00000000 00000000 ................
+0x01fdfeb8: 00000000 00000000 00000000 00000000 ................
+0x01fdfec8: 00000000 00000000 00000000 00000000 ................
+0x01fdfed8: 00000000 00000000 00000000 00000000 ................
+0x01fdfee8: 00000000 00000000 00000000 00000000 ................
+0x01fdfef8: 00000000 00000000 00000000 00000000 ................
+0x01fdff08: 00000000 00000000 00000000 00000000 ................
+0x01fdff18: 00000000 00000000 00000000 00000000 ................
+0x01fdff28: 00000000 00000000 00000000 00000000 ................
+0x01fdff38: 00000000 00000000 00000000 00000000 ................
+0x01fdff48: 00000000 00000000 00000000 00000000 ................
+0x01fdff58: 00000000 00000000 00000000 00000000 ................
+0x01fdff68: 00000000 00000000 00000000 00000000 ................
+0x01fdff78: 00000000 00000000 00000000 00000000 ................
+0x01fdff88: 00000000 00000000 00000000 00000000 ................
+0x01fdff98: 00000000 00000000 00000000 00000000 ................
+0x01fdffa8: 00000000 00000000 00000000 00000000 ................
+0x01fdffb8: 00000000 00000000 00000000 00000000 ................
+0x01fdffc8: 00000000 00000000 00000000 00000000 ................
+0x01fdffd8: 00000000 00000000 00000000 00000000 ................
+0x01fdffe8: 00000000 00000000 00000000 00000000 ................
+0x01fdfff8: 00000000 00000000                   ........
+
+Module 1
+C:\WINDOWS\SYSTEM32\xinput1_3.dll
+Image Base: 0x00400000  Image Size: 0x00016000
+File Size:  81768       File Time:  2007-04-04_185342
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? DirectX for Windows?
+   FileDesc:   Microsoft Common Controller API
+   FileVer:    9.18.944.0
+   ProdVer:    9.18.944.0
+
+Module 2
+D:\GO\src\studygo2\zinxtest\mmogame_zinx\game_client\client.exe
+Image Base: 0x00930000  Image Size: 0x011b8000
+File Size:  17729536    File Time:  2021-07-25_173306
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    5.4.1.40776
+   ProdVer:    5.4.1.40776
+
+Module 3
+D:\GO\src\studygo2\zinxtest\mmogame_zinx\game_client\client_Data\Mono\mono.dll
+Image Base: 0x10000000  Image Size: 0x00230000
+File Size:  2113496     File Time:  2021-07-25_173306
+Version:
+   Company:    Unity Technologies
+   Product:    libmono
+   FileDesc:   Unity Technologies fork of mono runtime
+   FileVer:    1.0.0.1
+   ProdVer:    1.0.0.1
+
+Module 4
+C:\WINDOWS\system32\SogouPy.ime
+Image Base: 0x10000000  Image Size: 0x00622000
+File Size:  6289272     File Time:  2020-12-28_222050
+Version:
+   Company:    Sogou.com Inc.
+   Product:    搜狗输入法
+   FileDesc:   搜狗输入法
+   FileVer:    10.0.0.4300
+   ProdVer:    10.0.0.4300
+
+Module 5
+C:\Program Files (x86)\sogoupinyin\10.0.0.4300\Resource.dll
+Image Base: 0x10000000  Image Size: 0x0011d000
+File Size:  1171832     File Time:  2020-12-28_222050
+Version:
+   Company:    Sogou.com Inc.
+   Product:    搜狗输入法
+   FileDesc:   搜狗输入法 资源
+   FileVer:    10.0.0.4300
+   ProdVer:    10.0.0.4300
+
+Module 6
+C:\WINDOWS\SYSTEM32\D3DSCache.dll
+Image Base: 0x54be0000  Image Size: 0x00020000
+File Size:  124968      File Time:  2021-04-14_195422
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft (R) D3D 着色器缓存库
+   FileVer:    10.0.19041.746
+   ProdVer:    10.0.19041.746
+
+Module 7
+C:\WINDOWS\SYSTEM32\amdihk32.dll
+Image Base: 0x54c00000  Image Size: 0x00027000
+File Size:  170192      File Time:  2020-11-18_054856
+Version:
+   Company:    Advanced Micro Devices, Inc.
+   Product:    Radeon Settings
+   FileDesc:   Radeon Settings: Host Service
+   FileVer:    2.0.0.1788
+   ProdVer:    2.0.0.1788
+
+Module 8
+C:\WINDOWS\System32\DriverStore\FileRepository\u0361132.inf_amd64_4863ccf4c1b997c9\B361196\atidxx32.dll
+Image Base: 0x54c30000  Image Size: 0x019f7000
+File Size:  27364104    File Time:  2020-11-18_054812
+Version:
+   Company:    Advanced Micro Devices, Inc. 
+   Product:    Advanced Micro Devices, Inc. Radeon DirectX 11 Driver
+   FileDesc:   atidxx32.dll
+   FileVer:    27.20.14501.18003
+   ProdVer:    8.17.10.976
+
+Module 9
+C:\WINDOWS\System32\DriverStore\FileRepository\u0361132.inf_amd64_4863ccf4c1b997c9\B361196\atiuxpag.dll
+Image Base: 0x56630000  Image Size: 0x0002e000
+File Size:  191632      File Time:  2020-11-18_054826
+Version:
+   Company:    Advanced Micro Devices, Inc. 
+   Product:    Advanced Micro Devices, Inc PowerXpress Vista DX10 User Mode Driver
+   FileDesc:   atiuxpag.dll
+   FileVer:    27.20.14501.18003
+   ProdVer:    8.14.1.6564
+
+Module 10
+C:\WINDOWS\System32\DriverStore\FileRepository\u0361132.inf_amd64_4863ccf4c1b997c9\B361196\aticfx32.dll
+Image Base: 0x56660000  Image Size: 0x00184000
+File Size:  1604960     File Time:  2020-11-18_054810
+Version:
+   Company:    Advanced Micro Devices, Inc. 
+   Product:    AMD Inc. Radeon DirectX 11 Driver
+   FileDesc:   aticfx32.dll
+   FileVer:    27.20.14501.18003
+   ProdVer:    8.17.10.1688
+
+Module 11
+C:\Program Files (x86)\sogoupinyin\Components\PicFace\1.1.0.1879\PicFace.dll
+Image Base: 0x62ba0000  Image Size: 0x001bb000
+File Size:  1787304     File Time:  2021-06-25_200306
+Version:
+   Company:    Sogou.com Inc.
+   Product:    搜狗输入法
+   FileDesc:   搜狗输入法 图片表情
+   FileVer:    1.1.0.1879
+   ProdVer:    1.1.0.1879
+
+Module 12
+C:\Program Files (x86)\360\360Safe\safemon\wdtHelper.dll
+Image Base: 0x631e0000  Image Size: 0x0005c000
+File Size:  364608      File Time:  2021-01-27_182402
+Version:
+   Company:    360.cn
+   Product:    360安全卫士
+   FileDesc:   
+   FileVer:    2.0.0.8618
+   ProdVer:    2.0.0.8618
+
+Module 13
+C:\WINDOWS\System32\sogoutsf.ime
+Image Base: 0x63470000  Image Size: 0x00175000
+File Size:  1447288     File Time:  2020-12-28_222050
+Version:
+   Company:    Sogou.com Inc.
+   Product:    搜狗输入法
+   FileDesc:   搜狗输入法
+   FileVer:    10.0.0.4300
+   ProdVer:    10.0.0.4300
+
+Module 14
+C:\WINDOWS\SYSTEM32\dxcore.dll
+Image Base: 0x638d0000  Image Size: 0x0002c000
+File Size:  163216      File Time:  2021-04-14_195426
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   DXCore
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 15
+C:\Program Files (x86)\sogoupinyin\Components\VoiceInput\1.0.0.170\VoiceInput.dll
+Image Base: 0x63ca0000  Image Size: 0x00015000
+File Size:  84888       File Time:  2021-01-12_233058
+Version:
+   Company:    Sogou.com Inc.
+   Product:    搜狗输入法
+   FileDesc:   VoiceInput Dynamic Link Library
+   FileVer:    1.0.0.170
+   ProdVer:    1.0.0.170
+
+Module 16
+C:\Program Files (x86)\360\360Safe\safemon\SafeWrapper32.dll
+Image Base: 0x646d0000  Image Size: 0x00007000
+File Size:  29576       File Time:  2020-07-13_104828
+Version:
+   Company:    360.cn
+   Product:    
+   FileDesc:   360网盾模块
+   FileVer:    2.0.0.1160
+   ProdVer:    2.0.0.1160
+
+Module 17
+C:\WINDOWS\SYSTEM32\dxgi.dll
+Image Base: 0x65f10000  Image Size: 0x000c3000
+File Size:  787624      File Time:  2021-05-15_160944
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   DirectX Graphics Infrastructure
+   FileVer:    10.0.19041.964
+   ProdVer:    10.0.19041.964
+
+Module 18
+C:\WINDOWS\SYSTEM32\d3d11.dll
+Image Base: 0x65fe0000  Image Size: 0x001e0000
+File Size:  1963736     File Time:  2021-04-14_195422
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Direct3D 11 Runtime
+   FileVer:    10.0.19041.746
+   ProdVer:    10.0.19041.746
+
+Module 19
+C:\WINDOWS\SYSTEM32\dwmapi.dll
+Image Base: 0x66650000  Image Size: 0x00026000
+File Size:  138936      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft 桌面窗口管理器 API
+   FileVer:    10.0.19041.746
+   ProdVer:    10.0.19041.746
+
+Module 20
+C:\WINDOWS\SYSTEM32\GLU32.dll
+Image Base: 0x66700000  Image Size: 0x0003f000
+File Size:  245248      File Time:  2021-07-09_202352
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   OpenGL 实用工具库 DLL
+   FileVer:    10.0.19041.1081
+   ProdVer:    10.0.19041.1081
+
+Module 21
+C:\WINDOWS\SYSTEM32\OPENGL32.dll
+Image Base: 0x66e60000  Image Size: 0x00103000
+File Size:  922112      File Time:  2021-07-09_202352
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   OpenGL Client DLL
+   FileVer:    10.0.19041.1081
+   ProdVer:    10.0.19041.1081
+
+Module 22
+C:\WINDOWS\SYSTEM32\HID.DLL
+Image Base: 0x697a0000  Image Size: 0x0000a000
+File Size:  25600       File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Hid 用户库
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 23
+C:\WINDOWS\SYSTEM32\TextShaping.dll
+Image Base: 0x69930000  Image Size: 0x00094000
+File Size:  611952      File Time:  2021-04-14_195424
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    0.0.0.0
+   ProdVer:    0.0.0.0
+
+Module 24
+C:\WINDOWS\SYSTEM32\CoreMessaging.dll
+Image Base: 0x6a2d0000  Image Size: 0x0009b000
+File Size:  630592      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft CoreMessaging Dll
+   FileVer:    10.0.19041.867
+   ProdVer:    10.0.19041.867
+
+Module 25
+C:\WINDOWS\SYSTEM32\CoreUIComponents.dll
+Image Base: 0x6a370000  Image Size: 0x0027e000
+File Size:  2621720     File Time:  2021-04-14_195422
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft Core UI Components Dll
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 26
+C:\WINDOWS\SYSTEM32\textinputframework.dll
+Image Base: 0x6a6e0000  Image Size: 0x000b9000
+File Size:  753592      File Time:  2021-05-15_160944
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   "TextInputFramework.DYNLINK"
+   FileVer:    10.0.19041.964
+   ProdVer:    10.0.19041.964
+
+Module 27
+C:\WINDOWS\SYSTEM32\wintypes.dll
+Image Base: 0x6b8a0000  Image Size: 0x000db000
+File Size:  896064      File Time:  2021-07-09_202344
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows 基本类型 DLL
+   FileVer:    10.0.19041.1081
+   ProdVer:    10.0.19041.1081
+
+Module 28
+C:\WINDOWS\SYSTEM32\resourcepolicyclient.dll
+Image Base: 0x6d5a0000  Image Size: 0x0000f000
+File Size:  52664       File Time:  2021-04-14_195422
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Resource Policy Client
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 29
+C:\WINDOWS\SYSTEM32\midimap.dll
+Image Base: 0x6d5b0000  Image Size: 0x00008000
+File Size:  18944       File Time:  2021-04-14_195420
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft MIDI Mapper
+   FileVer:    10.0.19041.488
+   ProdVer:    10.0.19041.488
+
+Module 30
+C:\WINDOWS\SYSTEM32\MSACM32.dll
+Image Base: 0x6d5c0000  Image Size: 0x00019000
+File Size:  93472       File Time:  2019-12-07_170912
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft ACM 音频筛选器
+   FileVer:    10.0.19041.1
+   ProdVer:    10.0.19041.1
+
+Module 31
+C:\WINDOWS\SYSTEM32\msacm32.drv
+Image Base: 0x6d5e0000  Image Size: 0x0000a000
+File Size:  23552       File Time:  2021-04-14_195420
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft Sound Mapper
+   FileVer:    10.0.19041.488
+   ProdVer:    10.0.19041.488
+
+Module 32
+C:\WINDOWS\SYSTEM32\UMPDC.dll
+Image Base: 0x6d5f0000  Image Size: 0x0000d000
+File Size:  47472       File Time:  2021-04-14_195426
+Version:
+   Company:    
+   Product:    
+   FileDesc:   
+   FileVer:    0.0.0.0
+   ProdVer:    0.0.0.0
+
+Module 33
+C:\WINDOWS\SYSTEM32\powrprof.dll
+Image Base: 0x6d600000  Image Size: 0x00044000
+File Size:  268080      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   电源配置文件帮助程序 DLL
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 34
+C:\WINDOWS\SYSTEM32\AUDIOSES.DLL
+Image Base: 0x6d650000  Image Size: 0x00136000
+File Size:  1258256     File Time:  2021-06-11_115534
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   音频会话
+   FileVer:    10.0.19041.1023
+   ProdVer:    10.0.19041.1023
+
+Module 35
+C:\WINDOWS\SYSTEM32\AVRT.dll
+Image Base: 0x6d790000  Image Size: 0x00008000
+File Size:  27336       File Time:  2021-04-14_195420
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   多媒体实时运行时
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 36
+C:\WINDOWS\SYSTEM32\wdmaud.drv
+Image Base: 0x6d7a0000  Image Size: 0x0003a000
+File Size:  215040      File Time:  2019-12-07_170912
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Winmm 音频系统驱动程序
+   FileVer:    10.0.19041.1
+   ProdVer:    10.0.19041.1
+
+Module 37
+C:\WINDOWS\System32\MMDevApi.dll
+Image Base: 0x6d7e0000  Image Size: 0x0006b000
+File Size:  421496      File Time:  2021-06-11_115534
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   MMDevice API
+   FileVer:    10.0.19041.1023
+   ProdVer:    10.0.19041.1023
+
+Module 38
+C:\WINDOWS\SYSTEM32\winmmbase.dll
+Image Base: 0x6d850000  Image Size: 0x0001d000
+File Size:  110720      File Time:  2019-12-07_170912
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   基本多媒体扩展 API DLL
+   FileVer:    10.0.19041.1
+   ProdVer:    10.0.19041.1
+
+Module 39
+C:\WINDOWS\SYSTEM32\ntmarta.dll
+Image Base: 0x6f040000  Image Size: 0x00029000
+File Size:  152904      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows NT MARTA 提供程序
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 40
+C:\WINDOWS\SYSTEM32\WKSCLI.DLL
+Image Base: 0x6f070000  Image Size: 0x00010000
+File Size:  58856       File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Workstation Service Client DLL
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 41
+C:\WINDOWS\SYSTEM32\ksuser.dll
+Image Base: 0x6f160000  Image Size: 0x00007000
+File Size:  20328       File Time:  2019-12-07_170912
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   User CSA Library
+   FileVer:    10.0.19041.1
+   ProdVer:    10.0.19041.1
+
+Module 42
+C:\WINDOWS\SYSTEM32\DbgHelp.dll
+Image Base: 0x6f540000  Image Size: 0x00188000
+File Size:  1494016     File Time:  2021-06-11_115540
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows Image Helper
+   FileVer:    10.0.19041.1052
+   ProdVer:    10.0.19041.1052
+
+Module 43
+C:\WINDOWS\SYSTEM32\profapi.dll
+Image Base: 0x713b0000  Image Size: 0x00018000
+File Size:  89360       File Time:  2021-04-14_195420
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   User Profile Basic API
+   FileVer:    10.0.19041.844
+   ProdVer:    10.0.19041.844
+
+Module 44
+C:\WINDOWS\SYSTEM32\MSWSOCK.dll
+Image Base: 0x71600000  Image Size: 0x00052000
+File Size:  324416      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft Windows Sockets 2.0 服务提供程序
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 45
+C:\WINDOWS\SYSTEM32\DNSAPI.dll
+Image Base: 0x71ca0000  Image Size: 0x00092000
+File Size:  588288      File Time:  2021-06-11_115538
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   DNS 客户端 API DLL
+   FileVer:    10.0.19041.1023
+   ProdVer:    10.0.19041.1023
+
+Module 46
+C:\WINDOWS\SYSTEM32\windows.storage.dll
+Image Base: 0x71fa0000  Image Size: 0x00609000
+File Size:  6362744     File Time:  2021-07-09_202344
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft WinRT Storage API
+   FileVer:    10.0.19041.1081
+   ProdVer:    10.0.19041.1081
+
+Module 47
+C:\WINDOWS\SYSTEM32\Wldp.dll
+Image Base: 0x72630000  Image Size: 0x00024000
+File Size:  139960      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows 锁定策略
+   FileVer:    10.0.19041.662
+   ProdVer:    10.0.19041.662
+
+Module 48
+C:\WINDOWS\SYSTEM32\NETUTILS.DLL
+Image Base: 0x72680000  Image Size: 0x0000b000
+File Size:  37176       File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Net Win32 API Helpers DLL
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 49
+C:\WINDOWS\SYSTEM32\NETAPI32.dll
+Image Base: 0x72690000  Image Size: 0x00013000
+File Size:  68680       File Time:  2021-04-14_195420
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Net Win32 API DLL
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 50
+C:\WINDOWS\SYSTEM32\SspiCli.dll
+Image Base: 0x72750000  Image Size: 0x00021000
+File Size:  123480      File Time:  2021-04-16_231304
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Security Support Provider Interface
+   FileVer:    10.0.19041.906
+   ProdVer:    10.0.19041.906
+
+Module 51
+C:\WINDOWS\SYSTEM32\WINMM.dll
+Image Base: 0x72820000  Image Size: 0x00028000
+File Size:  149272      File Time:  2021-04-14_195420
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   MCI API DLL
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 52
+C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+Image Base: 0x72b50000  Image Size: 0x00032000
+File Size:  196784      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   IP 帮助程序 API
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 53
+C:\WINDOWS\SYSTEM32\USERENV.dll
+Image Base: 0x72c90000  Image Size: 0x00025000
+File Size:  141008      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Userenv
+   FileVer:    10.0.19041.572
+   ProdVer:    10.0.19041.572
+
+Module 54
+C:\WINDOWS\System32\DEVOBJ.dll
+Image Base: 0x72d30000  Image Size: 0x00024000
+File Size:  138936      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Device Information Set DLL
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 55
+C:\WINDOWS\SYSTEM32\WINHTTP.dll
+Image Base: 0x72d60000  Image Size: 0x000ca000
+File Size:  823776      File Time:  2021-07-16_201618
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows HTTP 服务
+   FileVer:    10.0.19041.1110
+   ProdVer:    10.0.19041.1110
+
+Module 56
+C:\WINDOWS\SYSTEM32\dbgcore.DLL
+Image Base: 0x73dc0000  Image Size: 0x00026000
+File Size:  138752      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows Core Debugging Helpers
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 57
+C:\WINDOWS\system32\uxtheme.dll
+Image Base: 0x754d0000  Image Size: 0x00074000
+File Size:  454656      File Time:  2021-07-09_202344
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft UxTheme 库
+   FileVer:    10.0.19041.1081
+   ProdVer:    10.0.19041.1081
+
+Module 58
+C:\Program Files (x86)\360\360Safe\safemon\safemon.dll
+Image Base: 0x75550000  Image Size: 0x00260000
+File Size:  2354144     File Time:  2021-07-17_193508
+Version:
+   Company:    360.cn
+   Product:    360安全卫士
+   FileDesc:   360安全卫士 网盾防护模块
+   FileVer:    8.6.0.3610
+   ProdVer:    8.6.0.3610
+
+Module 59
+C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_a8625c1886757984\comctl32.dll
+Image Base: 0x757d0000  Image Size: 0x00210000
+File Size:  2152264     File Time:  2021-07-09_084726
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   用户体验控件库
+   FileVer:    6.10.19041.1110
+   ProdVer:    10.0.19041.1110
+
+Module 60
+C:\WINDOWS\SYSTEM32\VERSION.dll
+Image Base: 0x75a50000  Image Size: 0x00008000
+File Size:  27320       File Time:  2021-04-14_195430
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Version Checking and File Installation Libraries
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 61
+C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+Image Base: 0x75a60000  Image Size: 0x0000f000
+File Size:  52672       File Time:  2021-04-14_195424
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   AppModel API Host
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 62
+C:\WINDOWS\System32\MSIMG32.dll
+Image Base: 0x75a80000  Image Size: 0x00006000
+File Size:  7168        File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   GDIEXT Client DLL
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 63
+C:\WINDOWS\SYSTEM32\OLEACC.dll
+Image Base: 0x75a90000  Image Size: 0x00053000
+File Size:  321024      File Time:  2021-04-14_195430
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Active Accessibility Core Component
+   FileVer:    7.2.19041.746
+   ProdVer:    10.0.19041.746
+
+Module 64
+C:\WINDOWS\System32\combase.dll
+Image Base: 0x75b60000  Image Size: 0x00281000
+File Size:  2635664     File Time:  2021-07-09_202344
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   用于 Windows 的 Microsoft COM
+   FileVer:    10.0.19041.1081
+   ProdVer:    10.0.19041.1081
+
+Module 65
+C:\WINDOWS\System32\WS2_32.dll
+Image Base: 0x75df0000  Image Size: 0x00063000
+File Size:  397728      File Time:  2021-04-14_195420
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows Socket 2.0 32 位 DLL
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 66
+C:\WINDOWS\System32\bcrypt.dll
+Image Base: 0x75e60000  Image Size: 0x00019000
+File Size:  96032       File Time:  2021-06-11_115538
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows 加密基元库
+   FileVer:    10.0.19041.1023
+   ProdVer:    10.0.19041.1023
+
+Module 67
+C:\WINDOWS\System32\msvcrt.dll
+Image Base: 0x75e80000  Image Size: 0x000bf000
+File Size:  775256      File Time:  2021-04-14_195420
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows NT CRT DLL
+   FileVer:    7.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 68
+C:\WINDOWS\System32\IMM32.dll
+Image Base: 0x76000000  Image Size: 0x00025000
+File Size:  143056      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Multi-User Windows IMM32 API Client DLL
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 69
+C:\WINDOWS\System32\ole32.dll
+Image Base: 0x76030000  Image Size: 0x000e3000
+File Size:  924528      File Time:  2021-04-14_195426
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   用于 Windows 的 Microsoft OLE
+   FileVer:    10.0.19041.746
+   ProdVer:    10.0.19041.746
+
+Module 70
+C:\WINDOWS\System32\SHLWAPI.dll
+Image Base: 0x76120000  Image Size: 0x00045000
+File Size:  275808      File Time:  2021-06-11_115540
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   外壳简易实用工具库
+   FileVer:    10.0.19041.1023
+   ProdVer:    10.0.19041.1023
+
+Module 71
+C:\WINDOWS\System32\NSI.dll
+Image Base: 0x76170000  Image Size: 0x00007000
+File Size:  20144       File Time:  2021-04-14_195412
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   NSI User-mode interface DLL
+   FileVer:    10.0.19041.610
+   ProdVer:    10.0.19041.610
+
+Module 72
+C:\WINDOWS\System32\GDI32.dll
+Image Base: 0x761d0000  Image Size: 0x00023000
+File Size:  136328      File Time:  2021-04-14_195424
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   GDI Client DLL
+   FileVer:    10.0.19041.746
+   ProdVer:    10.0.19041.746
+
+Module 73
+C:\WINDOWS\System32\ADVAPI32.dll
+Image Base: 0x76200000  Image Size: 0x0007a000
+File Size:  489656      File Time:  2021-06-11_115534
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   高级 Windows 32 基本 API
+   FileVer:    10.0.19041.1052
+   ProdVer:    10.0.19041.1052
+
+Module 74
+C:\WINDOWS\System32\KERNELBASE.dll
+Image Base: 0x76280000  Image Size: 0x00214000
+File Size:  2182680     File Time:  2021-07-16_201618
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows NT 基本 API 客户端 DLL
+   FileVer:    10.0.19041.1110
+   ProdVer:    10.0.19041.1110
+
+Module 75
+C:\WINDOWS\System32\RPCRT4.dll
+Image Base: 0x765b0000  Image Size: 0x000bf000
+File Size:  781432      File Time:  2021-07-09_202344
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   远程过程调用运行时
+   FileVer:    10.0.19041.1081
+   ProdVer:    10.0.19041.1081
+
+Module 76
+C:\WINDOWS\System32\KERNEL32.DLL
+Image Base: 0x76670000  Image Size: 0x000f0000
+File Size:  632552      File Time:  2021-06-11_115536
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows NT 基本 API 客户端 DLL
+   FileVer:    10.0.19041.1023
+   ProdVer:    10.0.19041.1023
+
+Module 77
+C:\WINDOWS\System32\clbcatq.dll
+Image Base: 0x76760000  Image Size: 0x0007e000
+File Size:  504552      File Time:  2021-04-14_195426
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   COM+ Configuration Catalog
+   FileVer:    2001.12.10941.16384
+   ProdVer:    10.0.19041.546
+
+Module 78
+C:\WINDOWS\System32\shcore.dll
+Image Base: 0x767e0000  Image Size: 0x00087000
+File Size:  548528      File Time:  2021-06-11_115538
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   SHCORE
+   FileVer:    10.0.19041.1023
+   ProdVer:    10.0.19041.1023
+
+Module 79
+C:\WINDOWS\System32\win32u.dll
+Image Base: 0x76870000  Image Size: 0x00018000
+File Size:  92952       File Time:  2021-07-16_201618
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Win32u
+   FileVer:    10.0.19041.1110
+   ProdVer:    10.0.19041.1110
+
+Module 80
+C:\WINDOWS\System32\gdi32full.dll
+Image Base: 0x76890000  Image Size: 0x000dc000
+File Size:  895040      File Time:  2021-07-16_201618
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   GDI Client DLL
+   FileVer:    10.0.19041.1110
+   ProdVer:    10.0.19041.1110
+
+Module 81
+C:\WINDOWS\System32\bcryptPrimitives.dll
+Image Base: 0x769d0000  Image Size: 0x0005f000
+File Size:  383760      File Time:  2021-06-11_115530
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows Cryptographic Primitives Library
+   FileVer:    10.0.19041.1023
+   ProdVer:    10.0.19041.1023
+
+Module 82
+C:\WINDOWS\System32\OLEAUT32.dll
+Image Base: 0x76bc0000  Image Size: 0x00096000
+File Size:  606888      File Time:  2021-05-15_160946
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   OLEAUT32.DLL
+   FileVer:    10.0.19041.985
+   ProdVer:    10.0.19041.985
+
+Module 83
+C:\WINDOWS\System32\SETUPAPI.dll
+Image Base: 0x76c60000  Image Size: 0x00435000
+File Size:  4437776     File Time:  2021-04-14_195430
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows 安装程序 API
+   FileVer:    10.0.19041.844
+   ProdVer:    10.0.19041.844
+
+Module 84
+C:\WINDOWS\System32\sechost.dll
+Image Base: 0x770a0000  Image Size: 0x00075000
+File Size:  475712      File Time:  2021-04-16_231304
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Host for SCM/SDDL/LSA Lookup APIs
+   FileVer:    10.0.19041.906
+   ProdVer:    10.0.19041.906
+
+Module 85
+C:\WINDOWS\System32\ucrtbase.dll
+Image Base: 0x77120000  Image Size: 0x00120000
+File Size:  1181208     File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft? C Runtime Library
+   FileVer:    10.0.19041.789
+   ProdVer:    10.0.19041.789
+
+Module 86
+C:\WINDOWS\System32\COMDLG32.dll
+Image Base: 0x77240000  Image Size: 0x000af000
+File Size:  688128      File Time:  2021-04-16_231308
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Common Dialogs DLL
+   FileVer:    10.0.19041.906
+   ProdVer:    10.0.19041.906
+
+Module 87
+C:\WINDOWS\System32\cfgmgr32.dll
+Image Base: 0x772f0000  Image Size: 0x0003b000
+File Size:  236520      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Configuration Manager DLL
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 88
+C:\WINDOWS\System32\PSAPI.DLL
+Image Base: 0x773c0000  Image Size: 0x00006000
+File Size:  17016       File Time:  2021-04-14_195426
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Process Status Helper
+   FileVer:    10.0.19041.546
+   ProdVer:    10.0.19041.546
+
+Module 89
+C:\WINDOWS\System32\SHELL32.dll
+Image Base: 0x773e0000  Image Size: 0x005b3000
+File Size:  6002232     File Time:  2021-06-11_115542
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Windows Shell 公用 DLL
+   FileVer:    10.0.19041.1023
+   ProdVer:    10.0.19041.1023
+
+Module 90
+C:\WINDOWS\System32\MSCTF.dll
+Image Base: 0x779a0000  Image Size: 0x000d4000
+File Size:  859944      File Time:  2021-07-09_202344
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   MSCTF 服务器 DLL
+   FileVer:    10.0.19041.1081
+   ProdVer:    10.0.19041.1081
+
+Module 91
+C:\WINDOWS\System32\USER32.dll
+Image Base: 0x77a80000  Image Size: 0x00196000
+File Size:  1663656     File Time:  2021-04-16_231306
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   多用户 Windows 用户 API 客户端 DLL
+   FileVer:    10.0.19041.906
+   ProdVer:    10.0.19041.906
+
+Module 92
+C:\WINDOWS\System32\msvcp_win.dll
+Image Base: 0x77c20000  Image Size: 0x0007b000
+File Size:  495840      File Time:  2021-04-14_195428
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   Microsoft? C Runtime Library
+   FileVer:    10.0.19041.789
+   ProdVer:    10.0.19041.789
+
+Module 93
+C:\WINDOWS\SYSTEM32\ntdll.dll
+Image Base: 0x77cb0000  Image Size: 0x001a3000
+File Size:  1696752     File Time:  2021-07-16_201618
+Version:
+   Company:    Microsoft Corporation
+   Product:    Microsoft? Windows? Operating System
+   FileDesc:   NT 层 DLL
+   FileVer:    10.0.19041.1110
+   ProdVer:    10.0.19041.1110
+
+
+== [end of error.log] ==
