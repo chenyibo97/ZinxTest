@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"errors"
+	"fmt"
 	"studygo2/zinxtest/utils"
 	"studygo2/zinxtest/ziface"
 )
@@ -35,7 +36,7 @@ func (d *DataPack) Pack(msg ziface.IMessage) ([]byte, error) {
 
 func (d *DataPack) Unpack(data []byte) (ziface.IMessage, error) {
 	reader := bytes.NewReader(data)
-
+	//先读4位datalen 和data id
 	msg := &Message{}
 	err := binary.Read(reader, binary.LittleEndian, &msg.DataLen)
 	if err != nil {
@@ -46,7 +47,7 @@ func (d *DataPack) Unpack(data []byte) (ziface.IMessage, error) {
 		return nil, err
 	}
 	if msg.DataLen > utils.GlobalObject.MaxPackageSize {
-		return nil, errors.New("packl lenth out of max")
+		return nil, errors.New(fmt.Sprintf("data out of max,data:%d", msg.DataLen))
 	}
 	return msg, nil
 

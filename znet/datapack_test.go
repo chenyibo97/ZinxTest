@@ -71,9 +71,18 @@ func TestNewDataPack(t *testing.T) {
 		fmt.Println("pack msg2 fail,err:", err)
 	}
 	pack1 = append(pack1, pack2...)
+	buf := make([]byte, 512)
 
 	for {
 		conn.Write(pack1)
+		conn.Read(buf)
+		message, err := dp.Unpack(buf)
+		if err != nil {
+			fmt.Println("unpack msg fail,err:", err)
+		}
+		buf2 := make([]byte, message.GetMsgLen())
+		io.ReadFull(conn, buf2)
+		fmt.Println(string(buf2))
 		time.Sleep(1 * time.Second)
 	}
 

@@ -1,7 +1,9 @@
 package znet
 
 import (
+	"errors"
 	"fmt"
+	"io"
 	"net"
 	"studygo2/zinxtest/ziface"
 )
@@ -13,31 +15,77 @@ type Connection struct {
 	//  HandleApi ziface.HandleFunc
 	Exit chan bool
 
-	Router ziface.IRouter
+	MsgChan chan []byte
+	//Router ziface.IRouter
+	MsgHandle ziface.IMsgHandle
 }
 
-func NewConnection(conn *net.TCPConn, ConnId uint32, router ziface.IRouter) *Connection {
+func NewConnection(conn *net.TCPConn, ConnId uint32, MsgHandle ziface.IMsgHandle) *Connection {
 	return &Connection{
 		conn,
 		ConnId,
 		false,
 		//callback_Api,
 		make(chan bool, 1),
-		router,
+		make(chan []byte),
+		MsgHandle,
+	}
+}
+func (c *Connection) StartWriter() {
+	fmt.Println("[Write goutine is runing]")
+	defer fmt.Println(c.GetRemoteAddr().String(), "[conn writer eixt]")
+	for {
+		select {
+		case data := <-c.MsgChan:
+			if _, err := c.Conn.Write(data); err != nil {
+				fmt.Println("send data error,", err)
+				return
+			}
+		case <-c.Exit:
+			return
+		}
 	}
 }
 
 func (c *Connection) StartReader() {
 	fmt.Println("read start,connID=", c.ConnId)
-
+	defer fmt.Println(c.GetRemoteAddr().String(), "[conn reader exit]")
 	defer c.Stop()
-	buf := make([]byte, 512)
+	/*buf := make([]byte, 512)*/
+
+	dp := NewDataPack()
+
 	for {
-		_, err := c.Conn.Read(buf)
+
+		headData := make([]byte, dp.GetHeadLen())
+		_, err := io.ReadFull(c.GetTcpConnection(), headData)
 		if err != nil {
-			fmt.Println("read buf fail,err:", err)
-			continue
+			fmt.Println("read head failed,err:", err)
+			break
 		}
+		msg, err := dp.Unpack(headData)
+		if err != nil {
+			fmt.Println("unpack  failed,err:", err)
+			break
+		}
+		var data []byte
+		if msg.GetMsgLen() > 0 {
+			data = make([]byte, msg.GetMsgLen())
+
+			_, err := io.ReadFull(c.GetTcpConnection(), data)
+			if err != nil {
+				fmt.Println("read data failed,err:", err)
+				break
+			}
+		}
+
+		msg.SetData(data)
+
+		/*	_, err = c.Conn.Read(buf)
+			if err != nil {
+				fmt.Println("read buf fail,err:", err)
+				continue
+			}*/
 		/*req:=&Request{
 			conn: c,
 			data: buf,
@@ -49,23 +97,24 @@ func (c *Connection) StartReader() {
 		}*/
 		req := &Request{
 			conn: c,
-			data: buf,
+			msg:  msg,
 		}
-		func(request ziface.IRequest) {
-			c.Router.PreHandle(request)
-			c.Router.Handle(request)
-			c.Router.Handle(request)
-		}(req)
+		go c.MsgHandle.DoMsgHandler(req)
 
 	}
 
 }
+
+/*func (c *Connection)SendMsg(msgId uint32,data []byte){
+
+}*/
 
 func (c *Connection) Start() {
 
 	fmt.Println("connection start,connID=", c.ConnId)
 	//TODO 启动从当前连接写数据的业务
 	go c.StartReader()
+	go c.StartWriter()
 }
 func (c *Connection) Stop() {
 	fmt.Println("connection stop,connID=", c.ConnId)
@@ -74,7 +123,9 @@ func (c *Connection) Stop() {
 	}
 	c.IsClosed = true
 	c.Conn.Close()
+	c.Exit <- true
 	close(c.Exit)
+	close(c.MsgChan)
 	return
 }
 func (c *Connection) GetTcpConnection() *net.TCPConn {
@@ -86,6 +137,19 @@ func (c *Connection) GetConnID() uint32 {
 func (c *Connection) GetRemoteAddr() net.Addr {
 	return c.Conn.RemoteAddr()
 }
-func (c *Connection) Send(data []byte) error {
-	return nil
+
+func (c *Connection) SendMsg(msgid uint32, data []byte) (err error) {
+	if c.IsClosed == true {
+		err = errors.New("connecting has been closed")
+	}
+	dp := NewDataPack()
+	// msg:=NewMessage()
+
+	binaryMsg, err := dp.Pack(NewMessage(msgid, data))
+	if err != nil {
+		fmt.Println("pack fail,err:", err)
+	}
+
+	c.MsgChan <- binaryMsg
+	return
 }

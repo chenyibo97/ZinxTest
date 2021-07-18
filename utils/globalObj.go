@@ -23,7 +23,7 @@ type GlobalObj struct {
 func init() {
 	GlobalObject = &GlobalObj{
 		Name:           "zinxServer",
-		Version:        "v0.4",
+		Version:        "v0.6",
 		TcpPort:        8999,
 		Host:           "0.0.0.0",
 		MaxConn:        1000,
