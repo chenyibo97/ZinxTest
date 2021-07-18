@@ -15,6 +15,7 @@ type Connection struct {
 	//  HandleApi ziface.HandleFunc
 	Exit chan bool
 
+	MsgChan chan []byte
 	//Router ziface.IRouter
 	MsgHandle ziface.IMsgHandle
 }
@@ -26,13 +27,29 @@ func NewConnection(conn *net.TCPConn, ConnId uint32, MsgHandle ziface.IMsgHandle
 		false,
 		//callback_Api,
 		make(chan bool, 1),
+		make(chan []byte),
 		MsgHandle,
+	}
+}
+func (c *Connection) StartWriter() {
+	fmt.Println("[Write goutine is runing]")
+	defer fmt.Println(c.GetRemoteAddr().String(), "[conn writer eixt]")
+	for {
+		select {
+		case data := <-c.MsgChan:
+			if _, err := c.Conn.Write(data); err != nil {
+				fmt.Println("send data error,", err)
+				return
+			}
+		case <-c.Exit:
+			return
+		}
 	}
 }
 
 func (c *Connection) StartReader() {
 	fmt.Println("read start,connID=", c.ConnId)
-
+	defer fmt.Println(c.GetRemoteAddr().String(), "[conn reader exit]")
 	defer c.Stop()
 	/*buf := make([]byte, 512)*/
 
@@ -44,12 +61,12 @@ func (c *Connection) StartReader() {
 		_, err := io.ReadFull(c.GetTcpConnection(), headData)
 		if err != nil {
 			fmt.Println("read head failed,err:", err)
-			continue
+			break
 		}
 		msg, err := dp.Unpack(headData)
 		if err != nil {
 			fmt.Println("unpack  failed,err:", err)
-			continue
+			break
 		}
 		var data []byte
 		if msg.GetMsgLen() > 0 {
@@ -58,7 +75,7 @@ func (c *Connection) StartReader() {
 			_, err := io.ReadFull(c.GetTcpConnection(), data)
 			if err != nil {
 				fmt.Println("read data failed,err:", err)
-				continue
+				break
 			}
 		}
 
@@ -97,6 +114,7 @@ func (c *Connection) Start() {
 	fmt.Println("connection start,connID=", c.ConnId)
 	//TODO 启动从当前连接写数据的业务
 	go c.StartReader()
+	go c.StartWriter()
 }
 func (c *Connection) Stop() {
 	fmt.Println("connection stop,connID=", c.ConnId)
@@ -105,7 +123,9 @@ func (c *Connection) Stop() {
 	}
 	c.IsClosed = true
 	c.Conn.Close()
+	c.Exit <- true
 	close(c.Exit)
+	close(c.MsgChan)
 	return
 }
 func (c *Connection) GetTcpConnection() *net.TCPConn {
@@ -130,9 +150,6 @@ func (c *Connection) SendMsg(msgid uint32, data []byte) (err error) {
 		fmt.Println("pack fail,err:", err)
 	}
 
-	_, err = c.Conn.Write(binaryMsg)
-	if err != nil {
-		fmt.Println("send pack fail,err:", err)
-	}
+	c.MsgChan <- binaryMsg
 	return
 }
