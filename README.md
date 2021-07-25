@@ -1,1 +1,1 @@
-go zinx test
+Zinx框架的测试代码
