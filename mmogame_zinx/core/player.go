@@ -94,3 +94,117 @@ func (p *Player) Talk(content string) {
 		player.SendMsg(200, proto_msg)
 	}
 }
+func (p *Player) SyncSurround() {
+	//获取周边玩家
+	pids := WorldMgrObj.AOIMgr.GetPidsByPos(p.X, p.Z)
+	fmt.Println("pids:", pids)
+	//将当前玩家的位置信息通过200发给周围玩家
+	player := make([]*Player, 0, len(pids))
+	for _, pid := range pids {
+		fmt.Println("get pids", WorldMgrObj.GetPlayerByPid(int32(pid)))
+		player = append(player, WorldMgrObj.GetPlayerByPid(int32(pid)))
+	}
+
+	//组建msgid=200的proto数据
+
+	data := &pb.BroadCast{
+		PID: p.Pid,
+		Tp:  2, //代表广播的位置坐标
+		Data: &pb.BroadCast_P{
+			P: &pb.Position{
+				X: p.X,
+				Y: p.Y,
+				Z: p.Z,
+				V: p.V,
+			},
+		},
+	}
+	fmt.Println(player)
+	//让别人看到自己
+	for _, plyer := range player {
+		plyer.SendMsg(200, data)
+	}
+	//3让自己看到别人
+	//3.1组件MSGID:202的Proto数据
+	//3.1.1制作pb.player.slice切片
+	players_proto_msg := make([]*pb.Player, 0, len(player))
+	for _, plyer := range player {
+		p := &pb.Player{
+			PID: plyer.Pid,
+			P: &pb.Position{
+				X: plyer.X,
+				Y: plyer.Y,
+				Z: plyer.Z,
+				V: plyer.V,
+			},
+		}
+		players_proto_msg = append(players_proto_msg, p)
+	}
+	//3.1.2 syncplaer
+	SyncPlayer_proto_msg := &pb.SyncPlayers{
+		Ps: players_proto_msg,
+	}
+
+	//将组建好的数据发送给当前玩家的客户端
+	p.SendMsg(202, SyncPlayer_proto_msg)
+
+}
+
+func (p *Player) UpdatePos(x, y, z, v float32) {
+	//更新当前玩家的Player对象的坐标
+
+	p.X = x
+	p.Y = y
+	p.Z = z
+	p.V = v
+	//组件广播proto协议,msgID:=200 tp-4
+
+	proto_msg := &pb.BroadCast{
+		PID: p.Pid,
+		Tp:  4,
+		Data: &pb.BroadCast_P{
+			P: &pb.Position{
+				X: p.X,
+				Y: p.Y,
+				Z: p.Z,
+				V: p.V,
+			},
+		},
+	}
+	//获取当前玩家的周边玩家AOI九宫格之内的玩家
+	players := p.GetSurroudingPlayers()
+	for _, player := range players {
+		player.SendMsg(200, proto_msg)
+	}
+}
+
+//获取当前玩家的周边玩家AOU九宫格之内的玩家
+func (p *Player) GetSurroudingPlayers() []*Player {
+	pids := WorldMgrObj.AOIMgr.GetPidsByPos(p.X, p.Z)
+	PlayerS := make([]*Player, 0, len(pids))
+
+	for _, pid := range pids {
+		PlayerS = append(PlayerS, WorldMgrObj.GetPlayerByPid(int32(pid)))
+	}
+	return PlayerS
+
+}
+
+//玩家下线任务
+func (p *Player) Offline() {
+	fmt.Println("调用了吗？3")
+	players := p.GetSurroudingPlayers()
+	proto_msg := &pb.SyncPID{
+		PID: p.Pid,
+	}
+	fmt.Println("调用了吗？4")
+	for _, player := range players {
+		player.SendMsg(201, proto_msg)
+	}
+	fmt.Println("调用了吗？5")
+	//将当前玩家从世界树删除
+	WorldMgrObj.AOIMgr.RemoveFromGridByPos(int(p.Pid), p.X, p.Z)
+	fmt.Println("调用了吗？6")
+	WorldMgrObj.RemovePlayerByPid(p.Pid)
+	fmt.Println("调用了吗？7")
+}

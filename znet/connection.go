@@ -143,11 +143,13 @@ func (c *Connection) Stop() {
 	}
 	c.IsClosed = true
 	c.Conn.Close()
+
+	c.TcpServer.CallOnConnStop(c)
+	c.TcpServer.GetConnmgr().Remove(c)
+	//close(c.Exit)
 	c.Exit <- true
 	close(c.Exit)
 	close(c.MsgChan)
-	c.TcpServer.CallOnConnStop(c)
-	c.TcpServer.GetConnmgr().Remove(c)
 	return
 }
 func (c *Connection) GetTcpConnection() *net.TCPConn {

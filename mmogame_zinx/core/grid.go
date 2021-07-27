@@ -46,7 +46,7 @@ func (g *Grid) Remove(playerId int) {
 func (g *Grid) GetPlayerIDs() (playerId []int) {
 	g.pIDLock.RLock()
 	defer g.pIDLock.RUnlock()
-	playerId = make([]int, len(g.PlayerIDs))
+	playerId = make([]int, 0, len(g.PlayerIDs))
 	for k, _ := range g.PlayerIDs {
 		playerId = append(playerId, k)
 	}

@@ -17,9 +17,10 @@ func main() {
 	//创建hook函数
 	fmt.Println(utils.GlobalObject.Name)
 	s.SetOnConnStart(OnConnectionAdd)
+	s.SetOnConnStop(OnConnectionLost)
 	//注册路由服务
 	s.AddRouter(2, &apis.WorldChatApi{})
-	s.AddRouter(3, &znet.BaseRouter{})
+	s.AddRouter(3, &apis.MoveApi{})
 	//启动服务
 	s.Server()
 
@@ -40,6 +41,19 @@ func OnConnectionAdd(conn ziface.IConnection) {
 	//fmt.Println("添加一个后现在的玩家有：",len(core.WorldMgrObj.Players))
 	//将该连接绑定一个Pid
 	conn.SetProperty("pid", player.Pid)
+	//同步周边玩家，告诉他们当前玩家已经上线，广播当前玩家的位置信息
+	player.SyncSurround()
+
 	fmt.Println("------>player pi d:", player.Pid, "is arrived")
+
+}
+
+func OnConnectionLost(conn ziface.IConnection) {
+	fmt.Println("调用了吗？1")
+	pid, _ := conn.GetProperty("pid")
+	player := core.WorldMgrObj.GetPlayerByPid(pid.(int32))
+	fmt.Println("调用了吗？2")
+	player.Offline()
+	fmt.Println("------>pid=", pid, "offline")
 
 }
