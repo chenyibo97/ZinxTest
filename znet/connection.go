@@ -57,10 +57,12 @@ func (c *Connection) StartWriter() {
 			return
 		}
 	}
+
 }
 
 func (c *Connection) StartReader() {
 	fmt.Println("read start,connID=", c.ConnId)
+	fmt.Println("[read goutine is runing]")
 	defer fmt.Println(c.GetRemoteAddr().String(), "[conn reader exit]")
 	defer c.Stop()
 	/*buf := make([]byte, 512)*/

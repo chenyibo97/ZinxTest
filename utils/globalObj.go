@@ -38,7 +38,7 @@ func init() {
 }
 
 func (g *GlobalObj) Reload() {
-	file, err := ioutil.ReadFile("conf/zinx.json")
+	file, err := ioutil.ReadFile("config/zinx.json")
 	if err != nil {
 		fmt.Println("read config fail", err)
 	}

@@ -22,6 +22,7 @@ func (m *MsgHandle) DoMsgHandler(request ziface.IRequest) {
 	router.PostHandle(request)
 
 }
+
 func (m *MsgHandle) AddRouter(msgId uint32, router ziface.IRouter) {
 	if _, ok := m.Apis[msgId]; ok {
 		panic(fmt.Sprintf("repeat api,msg id:%d", msgId))

@@ -79,3 +79,18 @@ func (p *Player) BroadCastStartPosition() {
 	}
 	p.SendMsg(200, data)
 }
+func (p *Player) Talk(content string) {
+	proto_msg := &pb.BroadCast{
+		PID: p.Pid,
+		Tp:  1, //代表聊天广播
+		Data: &pb.BroadCast_Content{
+			Content: content,
+		},
+	}
+	//得到当前世界所有的在线玩家
+	Players := WorldMgrObj.GetAllPlayer()
+	for _, player := range Players {
+		fmt.Println(player)
+		player.SendMsg(200, proto_msg)
+	}
+}

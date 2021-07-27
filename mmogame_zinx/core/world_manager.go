@@ -1,6 +1,8 @@
 package core
 
-import "sync"
+import (
+	"sync"
+)
 
 type WorldManager struct {
 	AOIMgr  *AOIManager
@@ -42,12 +44,14 @@ func (wm *WorldManager) GetPlayerByPid(pid int32) *Player {
 	defer wm.PLock.RUnlock()
 	return wm.Players[pid]
 }
-func (wm *WorldManager) GetAllPlayer(pid int32) []*Player {
+func (wm *WorldManager) GetAllPlayer() []*Player {
 	wm.PLock.RLock()
 	defer wm.PLock.RUnlock()
-	players := make([]*Player, len(wm.Players))
+
+	players := make([]*Player, 0)
 	for _, v := range wm.Players {
 		players = append(players, v)
 	}
+	//fmt.Println("players:",players)
 	return players
 }
