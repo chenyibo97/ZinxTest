@@ -45,10 +45,12 @@ func (p *Player) SendMsg(msgId uint32, data proto.Message) {
 		fmt.Println("format failed:", err)
 		return
 	}
+
 	if p.Conn == nil {
 		fmt.Println("send msg failed,the conn is already closed")
 		return
 	}
+
 	p.Conn.SendMsg(msgId, bytes)
 }
 
@@ -174,6 +176,7 @@ func (p *Player) UpdatePos(x, y, z, v float32) {
 	//获取当前玩家的周边玩家AOI九宫格之内的玩家
 	players := p.GetSurroudingPlayers()
 	for _, player := range players {
+		fmt.Println("player:", player)
 		player.SendMsg(200, proto_msg)
 	}
 }
@@ -190,21 +193,24 @@ func (p *Player) GetSurroudingPlayers() []*Player {
 
 }
 
-//玩家下线任务
+//玩家下线任务www
 func (p *Player) Offline() {
-	fmt.Println("调用了吗？3")
+
+	//fmt.Println("调用了吗？7")
+	//fmt.Println("调用了吗？3")
 	players := p.GetSurroudingPlayers()
+	//fmt.Println(players)www
 	proto_msg := &pb.SyncPID{
 		PID: p.Pid,
 	}
-	fmt.Println("调用了吗？4")
+	//fmt.Println("调用了吗？4")
 	for _, player := range players {
 		player.SendMsg(201, proto_msg)
 	}
-	fmt.Println("调用了吗？5")
+	//fmt.Println("调用了吗？5")
 	//将当前玩家从世界树删除
 	WorldMgrObj.AOIMgr.RemoveFromGridByPos(int(p.Pid), p.X, p.Z)
-	fmt.Println("调用了吗？6")
+	//fmt.Println("调用了吗？6")
 	WorldMgrObj.RemovePlayerByPid(p.Pid)
-	fmt.Println("调用了吗？7")
+
 }

@@ -143,12 +143,13 @@ func (c *Connection) Stop() {
 	}
 	c.IsClosed = true
 	c.Conn.Close()
-
-	c.TcpServer.CallOnConnStop(c)
 	c.TcpServer.GetConnmgr().Remove(c)
+	c.TcpServer.CallOnConnStop(c)
+
 	//close(c.Exit)
 	c.Exit <- true
 	close(c.Exit)
+	//time.Sleep()
 	close(c.MsgChan)
 	return
 }

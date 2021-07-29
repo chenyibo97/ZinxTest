@@ -49,11 +49,11 @@ func OnConnectionAdd(conn ziface.IConnection) {
 }
 
 func OnConnectionLost(conn ziface.IConnection) {
-	fmt.Println("调用了吗？1")
+	//	fmt.Println("调用了吗？1")
 	pid, _ := conn.GetProperty("pid")
 	player := core.WorldMgrObj.GetPlayerByPid(pid.(int32))
-	fmt.Println("调用了吗？2")
+	//fmt.Println("调用了吗？2")
 	player.Offline()
-	fmt.Println("------>pid=", pid, "offline")
+	//	fmt.Println("------>pid=", pid, "offline")
 
 }
